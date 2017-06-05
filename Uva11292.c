@@ -5,6 +5,7 @@
     https://uva.onlinejudge.org
 ==================================================
     Solução do problema 11292 - Dragon of Loowater
+    Accepted: 0.130ms
 ==================================================
 */
 
