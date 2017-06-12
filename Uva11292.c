@@ -5,6 +5,7 @@
     https://uva.onlinejudge.org
 ==================================================
     Solução do problema 11292 - Dragon of Loowater
+==================================================
     Accepted: 0.13s
 ==================================================
 */
@@ -33,33 +34,33 @@ int main(){
 		insertionSort(knights, numberknights);
 		
 		int pay = 0;
-        int loser = 0;
-        int ok = 1;
+    int loser = 0;
+    int ok = 1;
 
-        for(i = 0; i < numberHeads; i++){
-            if(numberHeads - i > numberknights - pay){
-                loser = -1;
-                ok = 0;
-                break;
-            }
-
-			int j = pay;
-            for(; j < numberknights; j++){
-                if(knights[j] < dragon[i]){
-                    pay++;
-                    continue;
-                }
-                loser += knights[j];
-                pay++;
-                ok = 1;
-                break;
-            }
+    for(i = 0; i < numberHeads; i++){
+        if(numberHeads - i > numberknights - pay){
+            loser = -1;
+            ok = 0;
+            break;
         }
-        if(loser == -1 && ok == 0)
-            printf("Loowater is doomed!\n");
-        else
-            printf("%d\n", loser);
-	
+
+		   	int j = pay;
+        for(; j < numberknights; j++){
+            if(knights[j] < dragon[i]){
+                pay++;
+                continue;
+            }
+            loser += knights[j];
+            pay++;
+            ok = 1;
+            break;
+        }
+    }
+		
+    if(loser == -1 && ok == 0)
+        printf("Loowater is doomed!\n");
+    else
+        printf("%d\n", loser);
 	}
 }
 
@@ -79,4 +80,4 @@ int insertionSort(int original[], int length) {
         }
 
         return original;
-    }
+}
